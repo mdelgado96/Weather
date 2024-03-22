@@ -5,9 +5,21 @@
 }
 
 nav {
-  height: 50px;
+  margin-top: 30px;
+  height: 45px;
+  width: auto;
 }
 
-.nav_div {
+.nav_row {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  height: 40px;
+}
+
+.nav_search {
+  /* height: auto; */
 }
