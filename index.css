@@ -14,10 +14,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 50px;
 }
 
 input {
   height: 40px;
+  width: 600px;
+  padding-left: 10px;
+}
+
+input:focus {
+  background-color: rgb(235, 246, 255);
+  border-color: rgb(66, 113, 202);
 }
 
 .nav_search {
