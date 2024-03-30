@@ -81,7 +81,7 @@ input:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(244, 244, 255);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -93,9 +93,10 @@ input:focus {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(185, 185, 252);
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  opacity: 0.75;
 }
 
 input:focus + .slider {
@@ -116,5 +117,17 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.toggle_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
 .faren {
+  font-family: Nunito-Bold;
+}
+
+.celc {
+  font-family: Nunito-Bold;
 }
