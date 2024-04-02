@@ -137,3 +137,19 @@ input:checked + .slider:before {
   font-family: Nunito-Bold;
   font-size: 15px;
 }
+
+.city_container {
+  margin: 10px auto 0 auto;
+  max-width: 950;
+  height: 200px;
+}
+
+.city_row {
+  width: auto;
+}
+
+.city_weather {
+  height: 100%;
+  width: 450px;
+  background-color: aqua;
+}
