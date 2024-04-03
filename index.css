@@ -145,11 +145,23 @@ input:checked + .slider:before {
 }
 
 .city_row {
-  width: auto;
+  height: 500px;
 }
 
 .city_weather {
-  height: 100%;
+  height: 200px;
   width: 450px;
   background-color: aqua;
+}
+
+.city_forecast {
+  height: 150px;
+  width: 900px;
+  padding: 10px 0 0 10px;
+  margin-top: 10px;
+  background-color: rgb(244, 244, 255);
+}
+
+.forecast {
+  font-family: Nunito-SemiBold;
 }
