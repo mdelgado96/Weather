@@ -156,6 +156,16 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
+.forecast_container {
+  margin: 10px auto 0 auto;
+  max-width: 950;
+  height: 200px;
+}
+
+.forecast_row {
+  height: 500px;
+}
+
 .city_forecast {
   height: 150px;
   width: 900px;
@@ -176,4 +186,16 @@ input:checked + .slider:before {
 
 .city_icon_image {
   height: 100%;
+}
+
+.details_container {
+  height: 150px;
+  width: 900px;
+  padding: 10px 0 0 10px;
+  margin-top: 10px;
+  background-color: rgb(244, 244, 255);
+}
+
+.details_row {
+  height: 500px;
 }
