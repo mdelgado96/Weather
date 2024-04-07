@@ -138,14 +138,10 @@ input:checked + .slider:before {
   font-size: 15px;
 }
 
-.city_container {
+.container {
   margin: 10px auto 0 auto;
-  max-width: 950;
+  max-width: 900;
   height: 200px;
-}
-
-.city_row {
-  height: 500px;
 }
 
 .city_weather {
@@ -156,26 +152,27 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-.forecast_container {
-  margin: 10px auto 0 auto;
-  max-width: 950;
-  height: 200px;
-}
-
-.forecast_row {
-  height: 500px;
-}
-
 .city_forecast {
-  height: 150px;
+  height: 180px;
   width: 900px;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 15px;
   margin-top: 10px;
   background-color: rgb(244, 244, 255);
 }
 
 .forecast {
   font-family: Nunito-SemiBold;
+}
+
+.hourly_forecast {
+  height: 120px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: aqua;
+}
+
+.hourly_card {
+
 }
 
 .city_degree {
@@ -188,14 +185,24 @@ input:checked + .slider:before {
   height: 100%;
 }
 
-.details_container {
-  height: 150px;
+.container_details {
+  margin: 10px auto 0 auto;
+  max-width: 900;
+  height: 300px;
+}
+
+.weather_details {
+  height: 300px;
   width: 900px;
-  padding: 10px 0 0 10px;
   margin-top: 10px;
   background-color: rgb(244, 244, 255);
 }
 
 .details_row {
-  height: 500px;
+  height: 200px;
+}
+
+.details_text {
+  padding: 10px 0 0 10px;
+  font-family: Nunito-SemiBold;
 }
