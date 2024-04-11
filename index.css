@@ -172,7 +172,10 @@ input:checked + .slider:before {
 }
 
 .hourly_card {
-
+  height: 120px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: blue;
 }
 
 .city_degree {
