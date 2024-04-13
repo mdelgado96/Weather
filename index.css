@@ -209,3 +209,11 @@ input:checked + .slider:before {
   padding: 10px 0 0 10px;
   font-family: Nunito-SemiBold;
 }
+
+.details_card {
+  margin-top: 10px;
+  height: 120px;
+  width: 200px;
+  border-radius: 15px;
+  background-color: blue;
+}
