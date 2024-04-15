@@ -165,6 +165,12 @@ input:checked + .slider:before {
 }
 
 .hourly_forecast {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: .25rem;
+  margin-top: 1rem;
+
   height: 120px;
   width: 100%;
   margin-top: 10px;
@@ -212,8 +218,12 @@ input:checked + .slider:before {
 
 .details_card {
   margin-top: 10px;
-  height: 120px;
-  width: 200px;
-  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: .25rem;
+  margin-top: 1rem;
+}
+
+.det_card {
   background-color: blue;
 }
