@@ -3,6 +3,7 @@
     <!-- Our unique tag to identify the solution -->
     <bds />
     <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BigDevSoon Project</title>
@@ -16,7 +17,12 @@
           <span class="just_weather">Just Weather</span>
         </div>
         <div class="nav_search">
-          <input type="text" placeholder="Search cities" />
+          <input
+            type="search"
+            id="search"
+            placeholder="Search cities"
+            data-search
+          />
         </div>
         <div class="nav_temp">
           <div>
@@ -54,9 +60,11 @@
             <span class="forecast">TODAY'S FORECAST</span>
             <div class="hourly_forecast">
               <div class="hourly_card">
-                <div>time</div>
-                <div>icon</div>
-                <div>degrees</div>
+                <template data-forecast-template>
+                  <div>time</div>
+                  <div>icon</div>
+                  <div>degrees</div>
+                </template>
               </div>
               <div class="hourly_card">
                 <div>time</div>
@@ -106,5 +114,4 @@
       </div>
     </section>
   </body>
-  <script src="index.js"></script>
 </html>
