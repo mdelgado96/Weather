@@ -58,24 +58,14 @@
         <div class="row">
           <div class="city_forecast">
             <span class="forecast">TODAY'S FORECAST</span>
-            <div class="hourly_forecast">
-              <div class="hourly_card">
-                <template data-forecast-template>
-                  <div>time</div>
-                  <div>icon</div>
-                  <div>degrees</div>
-                </template>
-              </div>
-              <div class="hourly_card">
-                <div>time</div>
-                <div>icon</div>
-                <div>degrees</div>
-              </div>
-              <div class="hourly_card">
-                <div>time</div>
-                <div>icon</div>
-                <div>degrees</div>
-              </div>
+            <div class="hourly_forecast" data-forecast-cards-container>
+              <template data-forecast-template>
+                <div class="hourly_card">
+                  <div class="fourcast_time" data-forecast-time></div>
+                  <div class="forecast_icon" data-forecast-icon></div>
+                  <div class="forecast_degrees" data-forecast-degress></div>
+                </div>
+              </template>
             </div>
           </div>
         </div>

@@ -170,7 +170,7 @@ input:checked + .slider:before {
   gap: 0.50rem;
   margin-top: 1rem;
   height: 105px;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .hourly_card {
