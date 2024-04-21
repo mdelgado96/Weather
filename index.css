@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: RNunito-Medium;
+  font-family: Nunito-Medium;
   src: url("assets/fonts/Nunito-Medium.ttf");
 }
 
@@ -141,13 +141,12 @@ input:checked + .slider:before {
 .container {
   margin: 10px auto 0 auto;
   max-width: 900;
-  height: 200px;
+  height: 180px;
 }
 
 .city_weather {
-  height: 200px;
-  width: 450px;
-  background-color: aqua;
+  height: 170px;
+  width: 420px;
   display: flex;
   justify-content: space-between;
 }
@@ -158,6 +157,28 @@ input:checked + .slider:before {
   padding: 10px 0 0 15px;
   margin-top: 10px;
   background-color: rgb(244, 244, 255);
+}
+
+.city_degree {
+  height: 200px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header_city {
+  font-family: Nunito-Medium;
+  font-size: 50px;
+}
+
+.city_high_low {
+  font-family: Nunito-SemiBold;
+  font-size: 50px;
+}
+
+.city_icon_image {
+  height: 100%;
 }
 
 .forecast {
@@ -179,16 +200,6 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
   background-color: rgba(172, 172, 255, 0.993);
-}
-
-.city_degree {
-  height: 200px;
-  width: 250px;
-  background-color: black;
-}
-
-.city_icon_image {
-  height: 100%;
 }
 
 .container_details {
