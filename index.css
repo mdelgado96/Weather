@@ -167,7 +167,7 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
-.header_city {
+.city_header {
   font-family: Nunito-Medium;
   font-size: 50px;
 }
@@ -207,15 +207,6 @@ input:checked + .slider:before {
   width: 250px;
   display: flex;
   flex-direction: column;
-}
-
-.city_text {
-  font-family: Nunito-SemiBold;
-  font-size: 40px;
-}
-
-.degrees {
-  display: flex;
 }
 
 .city_icon_image {
