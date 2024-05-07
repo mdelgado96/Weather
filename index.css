@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: RNunito-Medium;
+  font-family: Nunito-Medium;
   src: url("assets/fonts/Nunito-Medium.ttf");
 }
 
@@ -147,7 +147,6 @@ input:checked + .slider:before {
 .city_weather {
   height: 200px;
   width: 450px;
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
 }
@@ -184,7 +183,17 @@ input:checked + .slider:before {
 .city_degree {
   height: 200px;
   width: 250px;
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.city_text {
+  font-family: Nunito-SemiBold;
+  font-size: 40px;
+}
+
+.degrees {
+  display: flex;
 }
 
 .city_icon_image {

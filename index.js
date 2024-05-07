@@ -1,20 +1,26 @@
+let value;
 
-const api_url =
-  "https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=Paris";
-  const forecastCardTemplate = document.querySelector("[data-forecast-template]");
-  const forecastCardContainer = document.querySelector("[data-forecast-cards-container]");
-  const searchInput = document.querySelector("[data-search]");
+const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
 
-  let places = [];
+const forecastCardTemplate = document.querySelector("[data-forecast-template]");
+const forecastCardContainer = document.querySelector(
+  "[data-forecast-cards-container]"
+);
+const searchInput = document.querySelector("[data-search]");
+
+let places = [];
 
 searchInput.addEventListener("input", (e) => {
-  const value = e.target.value;
-  console.log(value);
+  value = e.target.value;
+  places.forEach((place) => {
+    const isVisible = place.name.includes(value);
+    place.element.classList.toggle("hide", !isVisible);
+  });
 });
 
 fetch(api_url)
   .then((res) => res.json())
-  .then(data => {
+  .then((data) => {
     places = data.map((forecast) => {
       const card = forecastCardTemplate.content.cloneNode(true).children[0];
       const time = card.querySelector("[data-forecast-time]");
@@ -24,7 +30,13 @@ fetch(api_url)
       icon.textContent = forecast.id;
       degrees.textContent = forecast.region;
       forecastCardContainer.append(card);
-      return { time: forecast.lat, icon: forecast.icon, degrees: forecast.region, element: card }
+      console.log(data);
+      return {
+        time: forecast.lat,
+        icon: forecast.icon,
+        degrees: forecast.region,
+        element: card,
+      };
     });
   });
 
