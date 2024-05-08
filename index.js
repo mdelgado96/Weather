@@ -11,7 +11,7 @@ const searchInput = document.querySelector("[data-search]");
 let places = [];
 
 searchInput.addEventListener("input", (e) => {
-  value = e.target.value;
+  value = e.target.value.toLowerCase();
   places.forEach((place) => {
     const isVisible = place.name.includes(value);
     place.element.classList.toggle("hide", !isVisible);
