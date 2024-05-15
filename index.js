@@ -28,7 +28,7 @@ fetch(api_url)
       const degrees = card.querySelector("[data-forecast-degrees]");
       time.textContent = forecast.lat;
       icon.textContent = forecast.id;
-      degrees.textContent = forecast.region;
+      degrees.textContent = forecast.lon;
       forecastCardContainer.append(card);
       console.log(data);
       return {

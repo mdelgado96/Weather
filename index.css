@@ -152,6 +152,7 @@ input:checked + .slider:before {
 }
 
 .city_forecast {
+  border-radius: 15px;
   height: 180px;
   width: 900px;
   padding: 10px 0 0 15px;
@@ -177,6 +178,10 @@ input:checked + .slider:before {
   font-size: 50px;
 }
 
+.city_night_deg {
+  color: gray;
+}
+
 .city_icon_image {
   height: 100%;
 }
@@ -187,7 +192,7 @@ input:checked + .slider:before {
 
 .hourly_forecast {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 90px);
+  grid-template-columns: repeat(auto-fill, 85px);
   gap: 0.50rem;
   margin-top: 1rem;
   height: 105px;
@@ -195,10 +200,12 @@ input:checked + .slider:before {
 
 .hourly_card {
   border-radius: 15px;
+  padding: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: space-between;
   background-color: rgba(172, 172, 255, 0.993);
 }
 
