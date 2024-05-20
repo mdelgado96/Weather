@@ -1,6 +1,35 @@
-let value;
+import {
+  deleteSearchResults,
+  buildSearchResults,
+  clearStatsLine,
+  setStatsLine,
+} from "./js/searchResults";
+import { getSearchTerm } from "./js/dataFunctions"
 
+let value;
 const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
+
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") {
+    intiApp();
+  }
+});
+
+const intiApp = () => {
+  setSearchFocus();
+
+  // TODO 3 listeners clear text
+
+  const form = document.getElementById("seachBar");
+  form.addEventListener("submit", submitTheSearch);
+};
+
+const submitTheSearch = (event) => {
+  event.preventDefault();
+  deleteSearchResults();
+  processTheSearch();
+  setSearchFocus();
+};
 
 const forecastCardTemplate = document.querySelector("[data-forecast-template]");
 const forecastCardContainer = document.querySelector(
@@ -39,7 +68,6 @@ fetch(api_url)
       };
     });
   });
-
 //   async function main() {
 //   try {
 //     const response = await fetch(api_url);
@@ -51,3 +79,78 @@ fetch(api_url)
 // }
 
 // main();
+
+const processTheSearch = async () => {
+  clearStatsLine();
+  const searchTerm = getSearchTerm();
+  if (searchTerm === "") return;
+  const resultArray = await retrieveSearchResults(searchTerm);
+  if (resultArray.length) buildSearchResults(resultArray);
+  setStatsLine(resultArray.length);
+};
+
+const setSearchFocus = () => {
+  document.getElementById("search").focus();
+};
+
+const getSearchTerm = () => {
+  const rawSearchTerm = document.getElementById("search").value.trim();
+  const regex = /[ ]{2,}/gi;
+  const searchTerm = rawSearchTerm.replaceAll(regex, " ");
+  return searchTerm;
+};
+const retrieveSearchResults = async (searchTerm) => {
+  const citySearchString = getCitySearchString(searchTerm);
+  const citySearchResults = await requestData(citySearchString);
+  let resultArray = [];
+  if (citySearchResults.hasOwnProperty("query")) {
+    resultArray = processCityResults(citySearchResults.query.pages);
+  }
+  return resultArray;
+};
+
+const getCitySearchString = (searchTerm) => {
+  const maxChars = getMaxChars();
+  const rawSearchString = `http://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=${searchTerm}`;
+  const searchString = encodeURI(rawSearchString);
+  return searchString;
+};
+
+const getMaxChars = () => {
+  const width = window.innerWidth || document.body.clientWidth;
+  let maxChars;
+  if (width < 414) maxChars = 65;
+  if (width >= 414 && width < 1400) maxChars = 100;
+  if (width >= 1400) maxChars = 130;
+  return maxChars;
+};
+
+const requestData = async (searchString) => {
+  try {
+    const response = await fetch(searchString);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const processCityResults = (results) => {
+  const resultArray = [];
+  Object.keys(results).forEach((key) => {
+    const id = key;
+    const title = results[key].title;
+    const text = results[key].extract;
+    const img = results[key].hasOwnProperty("thumbnail")
+      ? results[key].thumbnail.source
+      : null;
+    const item = {
+      id: id,
+      title: title,
+      img: img,
+      text: text,
+    };
+    resultArray.push(item);
+  });
+  return resultArray;
+};
