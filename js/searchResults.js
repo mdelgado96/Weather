@@ -1,5 +1,10 @@
 export const deleteSearchResults = () => {
-
+  const parentElement = document.getElementById("searchResults");
+  let child = parentElement.lastElementChild;
+  while (child) {
+    parentElement.removeChild(child);
+    child = parentElement.lastElementChild;
+  }
 }
 
 export const buildSearchResults = (resultArray) => {
@@ -19,7 +24,7 @@ export const buildSearchResults = (resultArray) => {
   });
 };
 
-export const createResultItem = (result) => {
+const createResultItem = (result) => {
   const resultItem = document.createElement("div");
   resultItem.classList.add("resultItem");
   const resultTitle = document.createElement("div");
@@ -33,7 +38,7 @@ export const createResultItem = (result) => {
   return resultItem;
 };
 
-export const createResultImage = (result) => {
+const createResultImage = (result) => {
   const resultImage = document.createElement("div");
   resultImage.classList.add("resultImage");
   const img = document.createElement("img");
@@ -43,7 +48,7 @@ export const createResultImage = (result) => {
   return resultImage;
 };
 
-export const createResultText = (result) => {
+const createResultText = (result) => {
   const resultText = document.createElement("div");
   resultText.classList.add("resultText");
   const resultDescription = document.createElement("p");
