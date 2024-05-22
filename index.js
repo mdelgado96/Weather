@@ -1,10 +1,15 @@
 import {
+  setSearchFocus,
+  showClearTextButton,
+  clearPushListener,
+} from "./js/searchBar";
+import {
   deleteSearchResults,
   buildSearchResults,
   clearStatsLine,
   setStatsLine,
 } from "./js/searchResults";
-import { getSearchTerm } from "./js/dataFunctions"
+import { getSearchTerm, retrieveSearchResults } from "./js/dataFunctions";
 
 let value;
 const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
@@ -17,9 +22,11 @@ document.addEventListener("readystatechange", (event) => {
 
 const intiApp = () => {
   setSearchFocus();
-
-  // TODO 3 listeners clear text
-
+  const search = document.getElementById("search");
+  search.addEventListener("input", showClearTextButton);
+  const clear = document.getElementById("clear");
+  clear.addEventListener("click", clearSearchText);
+  clear.addEventListener("keydown", clearPushListener);
   const form = document.getElementById("seachBar");
   form.addEventListener("submit", submitTheSearch);
 };
@@ -87,8 +94,4 @@ const processTheSearch = async () => {
   const resultArray = await retrieveSearchResults(searchTerm);
   if (resultArray.length) buildSearchResults(resultArray);
   setStatsLine(resultArray.length);
-};
-
-const setSearchFocus = () => {
-  document.getElementById("search").focus();
 };
