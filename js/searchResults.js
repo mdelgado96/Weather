@@ -24,6 +24,31 @@ export const buildSearchResults = (resultArray) => {
   });
 };
 
+
+///////// was originally in index.js /////////////
+// fetch(api_url)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     places = data.map((forecast) => {
+//       const card = forecastCardTemplate.content.cloneNode(true).children[0];
+//       const time = card.querySelector("[data-forecast-time]");
+//       const icon = card.querySelector("[data-forecast-icon]");
+//       const degrees = card.querySelector("[data-forecast-degrees]");
+//       time.textContent = forecast.lat;
+//       icon.textContent = forecast.id;
+//       degrees.textContent = forecast.lon;
+//       forecastCardContainer.append(card);
+//       console.log(data);
+//       return {
+//         time: forecast.lat,
+//         icon: forecast.icon,
+//         degrees: forecast.region,
+//         element: card,
+//       };
+//     });
+//   });
+////////////////////////////////////////////////////////
+
 const createResultItem = (result) => {
   const resultItem = document.createElement("div");
   resultItem.classList.add("resultItem");

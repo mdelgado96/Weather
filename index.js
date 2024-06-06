@@ -54,27 +54,28 @@ searchInput.addEventListener("input", (e) => {
   });
 });
 
-fetch(api_url)
-  .then((res) => res.json())
-  .then((data) => {
-    places = data.map((forecast) => {
-      const card = forecastCardTemplate.content.cloneNode(true).children[0];
-      const time = card.querySelector("[data-forecast-time]");
-      const icon = card.querySelector("[data-forecast-icon]");
-      const degrees = card.querySelector("[data-forecast-degrees]");
-      time.textContent = forecast.lat;
-      icon.textContent = forecast.id;
-      degrees.textContent = forecast.lon;
-      forecastCardContainer.append(card);
-      console.log(data);
-      return {
-        time: forecast.lat,
-        icon: forecast.icon,
-        degrees: forecast.region,
-        element: card,
-      };
-    });
-  });
+// fetch(api_url)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     places = data.map((forecast) => {
+//       const card = forecastCardTemplate.content.cloneNode(true).children[0];
+//       const time = card.querySelector("[data-forecast-time]");
+//       const icon = card.querySelector("[data-forecast-icon]");
+//       const degrees = card.querySelector("[data-forecast-degrees]");
+//       time.textContent = forecast.lat;
+//       icon.textContent = forecast.id;
+//       degrees.textContent = forecast.lon;
+//       forecastCardContainer.append(card);
+//       console.log(data);
+//       return {
+//         time: forecast.lat,
+//         icon: forecast.icon,
+//         degrees: forecast.region,
+//         element: card,
+//       };
+//     });
+//   });
+
 //   async function main() {
 //   try {
 //     const response = await fetch(api_url);
@@ -92,6 +93,9 @@ const processTheSearch = async () => {
   const searchTerm = getSearchTerm();
   if (searchTerm === "") return;
   const resultArray = await retrieveSearchResults(searchTerm);
-  if (resultArray.length) buildSearchResults(resultArray);
+  if (resultArray.length)
+    /*builds search result on page, since i'm not building a search result this way then I won't need it.*/
+    buildSearchResults(resultArray); //might not need this one
+    
   setStatsLine(resultArray.length);
 };

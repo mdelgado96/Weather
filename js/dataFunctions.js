@@ -19,6 +19,7 @@ export const getCitySearchString = (searchTerm) => {
   // const maxChars = getMaxChars();
   const rawSearchString = `http://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=${searchTerm}`;
   const searchString = encodeURI(rawSearchString);
+  console.log(searchString);
   return searchString;
 };
 
