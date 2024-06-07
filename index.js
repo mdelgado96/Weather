@@ -4,7 +4,7 @@ import {
   clearPushListener,
 } from "./js/searchBar";
 import {
-  deleteSearchResults,
+  // deleteSearchResults,
   buildSearchResults,
   clearStatsLine,
   setStatsLine,
@@ -33,7 +33,7 @@ const intiApp = () => {
 
 const submitTheSearch = (event) => {
   event.preventDefault();
-  deleteSearchResults();
+  // deleteSearchResults();
   processTheSearch();
   setSearchFocus();
 };
@@ -96,6 +96,6 @@ const processTheSearch = async () => {
   if (resultArray.length)
     /*builds search result on page, since i'm not building a search result this way then I won't need it.*/
     buildSearchResults(resultArray); //might not need this one
-    
+
   setStatsLine(resultArray.length);
 };

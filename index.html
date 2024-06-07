@@ -16,6 +16,7 @@
           <img class="icon_img" src="assets/icons/day/113.png" alt="" />
           <span class="just_weather">Just Weather</span>
         </div>
+        <!-- search bar -->
         <div class="nav_search">
           <input
             type="search"
@@ -25,6 +26,18 @@
           />
           <div id="clear" class="none button clear" role="button"></div>
         </div>
+        <!-- search bar -->
+        <!-- <form id="searchBar" class="searchBar" role="search"> 
+                <label class="offscreen" for="search">Enter a search term or phrase</label>
+                <input id="search" type="text" autocomplete="off" role="searchbox" />
+                <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
+                    <i class="fas fa-times"></i>
+                </div>
+                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
+                    <i class="fas fa-search blue"></i>
+                </button>
+            </form> -->
+
         <div class="nav_temp">
           <div>
             <label class="switch">
@@ -42,11 +55,13 @@
       <div class="container">
         <div class="row">
           <div class="city_weather">
-            <template><!--  TODO  -->
+            <template
+              ><!--  TODO  -->
               <div class="city_degree">
                 <span class="city_header">city</span>
                 <div class="city_high_low">
-                  <span>61&deg</span> <span class="city_night_deg">-16&deg</span>
+                  <span>61&deg</span>
+                  <span class="city_night_deg">-16&deg</span>
                 </div>
               </div>
               <div class="city_icon">
@@ -55,8 +70,8 @@
                   class="city_icon_image"
                   alt=""
                 />
-              </div>
-            </template><!--  TODO  -->
+              </div> </template
+            ><!--  TODO  -->
           </div>
         </div>
       </div>
