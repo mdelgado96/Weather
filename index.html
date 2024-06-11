@@ -3,6 +3,10 @@
     <!-- Our unique tag to identify the solution -->
     <bds />
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <script defer src="index.js" type="module"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,26 +21,34 @@
           <span class="just_weather">Just Weather</span>
         </div>
         <!-- search bar -->
-        <div class="nav_search">
+        <!-- <div class="nav_search">
           <input
-            type="search"
+            type="text"
             id="searchBar"
             placeholder="Search cities"
             data-search
           />
           <div id="clear" class="none button clear" role="button"></div>
-        </div>
+        </div> -->
         <!-- search bar -->
-        <!-- <form id="searchBar" class="searchBar" role="search"> 
-                <label class="offscreen" for="search">Enter a search term or phrase</label>
-                <input id="search" type="text" autocomplete="off" role="searchbox" />
-                <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
-                    <i class="fas fa-times"></i>
-                </div>
-                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
-                    <i class="fas fa-search blue"></i>
-                </button>
-            </form> -->
+
+        <form id="searchBar" class="searchBar" role="search">
+          <!-- <label class="offscreen" for="search"
+            >Enter a search term or phrase</label
+          > -->
+          <input id="search" type="text" autocomplete="off" role="searchbox" />
+          <div id="clear" class="none button clear" role="button">
+            <!-- <i class="fas fa-times"></i> -->
+          </div>
+          <!-- <button
+            id="searchButton"
+            class="button searchButton"
+            type="submit"
+            aria-label="Submit button"
+          >
+            <i class="fas fa-search blue"></i>
+          </button> -->
+        </form>
 
         <div class="nav_temp">
           <div>
@@ -51,6 +63,7 @@
         </div>
       </div>
     </nav>
+
     <section id="city">
       <div class="container">
         <div class="row">

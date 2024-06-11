@@ -2,14 +2,15 @@ import {
   setSearchFocus,
   showClearTextButton,
   clearPushListener,
-} from "./js/searchBar";
+  clearSearchText
+} from "./js/searchBar.js";
 import {
   // deleteSearchResults,
   buildSearchResults,
   clearStatsLine,
   setStatsLine,
-} from "./js/searchResults";
-import { getSearchTerm, retrieveSearchResults } from "./js/dataFunctions";
+} from "./js/searchResults.js";
+import { getSearchTerm, retrieveSearchResults } from "./js/dataFunctions.js";
 
 let value;
 const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
@@ -27,7 +28,7 @@ const intiApp = () => {
   const clear = document.getElementById("clear");
   clear.addEventListener("click", clearSearchText);
   clear.addEventListener("keydown", clearPushListener);
-  const form = document.getElementById("seachBar");
+  const form = document.getElementById("searchBar");
   form.addEventListener("submit", submitTheSearch);
 };
 
@@ -46,13 +47,13 @@ const searchInput = document.querySelector("[data-search]");
 
 let places = [];
 
-searchInput.addEventListener("input", (e) => {
-  value = e.target.value.toLowerCase();
-  places.forEach((place) => {
-    const isVisible = place.name.includes(value);
-    place.element.classList.toggle("hide", !isVisible);
-  });
-});
+// searchInput.addEventListener("input", (e) => {
+//   value = e.target.value.toLowerCase();
+//   places.forEach((place) => {
+//     const isVisible = place.name.includes(value);
+//     place.element.classList.toggle("hide", !isVisible);
+//   });
+// });
 
 // fetch(api_url)
 //   .then((res) => res.json())
