@@ -16,21 +16,12 @@ export const retrieveSearchResults = async (searchTerm) => {
 };
 
 export const getCitySearchString = (searchTerm) => {
-  // const maxChars = getMaxChars();
   const rawSearchString = `http://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=${searchTerm}`;
   const searchString = encodeURI(rawSearchString);
   console.log(searchString);
   return searchString;
 };
 
-// export const getMaxChars = () => {
-//   const width = window.innerWidth || document.body.clientWidth;
-//   let maxChars;
-//   if (width < 414) maxChars = 65;
-//   if (width >= 414 && width < 1400) maxChars = 100;
-//   if (width >= 1400) maxChars = 130;
-//   return maxChars;
-// };
 
 export const requestData = async (searchString) => {
   try {
