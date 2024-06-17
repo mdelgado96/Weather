@@ -5,10 +5,7 @@ import {
   clearSearchText
 } from "./js/searchBar.js";
 import {
-  // deleteSearchResults,
   buildSearchResults,
-  clearStatsLine,
-  setStatsLine,
 } from "./js/searchResults.js";
 import { getSearchTerm, retrieveSearchResults } from "./js/dataFunctions.js";
 
@@ -34,18 +31,17 @@ const intiApp = () => {
 
 const submitTheSearch = (event) => {
   event.preventDefault();
-  // deleteSearchResults();
   processTheSearch();
   setSearchFocus();
 };
 
-const forecastCardTemplate = document.querySelector("[data-forecast-template]");
-const forecastCardContainer = document.querySelector(
-  "[data-forecast-cards-container]"
-);
-const searchInput = document.querySelector("[data-search]");
+// const forecastCardTemplate = document.querySelector("[data-forecast-template]");
+// const forecastCardContainer = document.querySelector(
+//   "[data-forecast-cards-container]"
+// );
+// const searchInput = document.querySelector("[data-search]");
 
-let places = [];
+// let places = [];
 
 // searchInput.addEventListener("input", (e) => {
 //   value = e.target.value.toLowerCase();
