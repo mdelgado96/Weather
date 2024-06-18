@@ -43,6 +43,7 @@ const submitTheSearch = (event) => {
 
 // let places = [];
 
+////////////////////////////////////////////////////////////////////// search bar WDS
 // searchInput.addEventListener("input", (e) => {
 //   value = e.target.value.toLowerCase();
 //   places.forEach((place) => {
@@ -50,6 +51,7 @@ const submitTheSearch = (event) => {
 //     place.element.classList.toggle("hide", !isVisible);
 //   });
 // });
+//////////////////////////////////////////////////////////////////////
 
 // fetch(api_url)
 //   .then((res) => res.json())
