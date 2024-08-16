@@ -28,6 +28,8 @@ export const requestData = async (searchString) => {
     const response = await fetch(searchString);
     const data = await response.json();
     return data;
+  console.log(data);
+
   } catch (err) {
     console.error(err);
   }
