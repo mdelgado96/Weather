@@ -10,7 +10,7 @@ import {
 import { getSearchTerm, retrieveSearchResults } from "./js/dataFunctions.js";
 
 let value;
-const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
+// const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=London`;
 
 document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") {
@@ -86,11 +86,11 @@ const submitTheSearch = (event) => {
 // }
 
 // main();
-
+export let resultArray;
 const processTheSearch = async () => {
   const searchTerm = getSearchTerm();
   if (searchTerm === "") return;
-  const resultArray = await retrieveSearchResults(searchTerm);
+  resultArray = await retrieveSearchResults(searchTerm);
   if (resultArray.length)
     /*builds search result on page, since i'm not building a search result this way then I won't need it.*/
     buildSearchResults(resultArray); //might not need this one
