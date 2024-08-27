@@ -24,6 +24,13 @@
   src: url("assets/fonts/Nunito-SemiBold.ttf");
 }
 
+.box {
+  
+  background-color: rgb(238, 238, 217);
+  height: 150px;
+  /* display: none; */
+}
+
 nav {
   margin: 30px auto 0 auto;
   height: 45px;
@@ -78,6 +85,14 @@ input:focus {
   @include mq(768px) {
     padding: 0 1rem;
   } */
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
 }
 
 .switch {

@@ -86,11 +86,10 @@ const submitTheSearch = (event) => {
 // }
 
 // main();
-export let resultArray;
 const processTheSearch = async () => {
   const searchTerm = getSearchTerm();
   if (searchTerm === "") return;
-  resultArray = await retrieveSearchResults(searchTerm);
+  const resultArray = await retrieveSearchResults(searchTerm);
   if (resultArray.length)
     /*builds search result on page, since i'm not building a search result this way then I won't need it.*/
     buildSearchResults(resultArray); //might not need this one
