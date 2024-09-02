@@ -42,10 +42,12 @@ const submitTheSearch = (event) => {
 // const searchInput = document.querySelector("[data-search]");
 
 // let places = [];
+// const api_url = `https://api.weatherapi.com/v1/search.json?key=96da7893841b4d90a9651147241903&q=${citySearch}`;
 
 ////////////////////////////////////////////////////////////////////// search bar WDS
-// searchInput.addEventListener("input", (e) => {
+// const citySearch = searchInput.addEventListener("input", (e) => {
 //   value = e.target.value.toLowerCase();
+//   console.log(value);
 //   places.forEach((place) => {
 //     const isVisible = place.name.includes(value);
 //     place.element.classList.toggle("hide", !isVisible);
